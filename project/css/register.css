@@ -1,0 +1,156 @@
+html,body,ul,li,ol,dl,dd,dt,p,h1,h2,h3,h4,h5,h6,form,fieldset,legend,img,input{margin:0;padding:0}
+body{font-family: "微软雅黑";}
+ul,ol,li{list-style:none;}
+b,strong{font-weight:100;}
+em,i{font-style:normal;}
+h1,h2,h3,h4,h5,h6{font-weight:100;font-size:16px;}
+a,u{text-decoration: none;}
+input{outline:none;}
+img{display:block;border:0;}
+body,html {
+  height: 100%;
+  overflow: hidden;
+}
+body{
+	color:#192E32;
+}
+
+form{
+	display:block;
+}
+.login-body{
+	width:100%;
+	height:100%;
+	background:#555 url(../img/tu1.png) no-repeat center center;
+	background-size:cover;
+	position:relative;
+}
+/*头部*/
+.head{
+	height:44px;
+	padding:40px 0 40px 50px;
+}
+/*主体*/
+.main{
+	position:absolute;
+	top:10%;
+	right:0;
+	left:0;
+	width:475px;
+	margin:auto auto;
+}
+
+.logo-center{
+	width:380px;
+	margin:0 auto;
+}
+.logo-center img{
+	width:248px;
+	height:65px;
+	margin-left:66px;
+}
+
+.main-con{
+	position:relative;
+	overflow:hidden;
+	padding-bottom:42px;
+	height:350px;
+	background:url(../img/tu2.png) no-repeat 0 bottom;
+	margin-top:50px;
+}
+.main-con .show{
+	position:absolute;
+	left:16px;
+	z-index:2;
+	width:302px;
+	background:rgba(255,255,255,.85);
+	border:none;
+	border-radius:0;
+	color:#A1A1A1;
+	padding:5px 70px 25px;
+	overflow:hidden;
+	box-shadow:5px 2px 20px rgba(0,0,0,.3);
+	height:322px;
+}
+.show .controls{
+	position:relative;
+	height:51px;
+	border-left:1px solid #ddd;
+	border-right:1px solid #ddd;
+	border-bottom:1px solid #ddd;
+}
+input{
+	display:inline-block;
+	border:none;
+	background-color:#fff;
+	color:#8a8a8a;
+	width:100%;
+	height:48px;
+	line-height:48px;
+	text-indent:50px;
+}
+.iconfont{
+	display:block;
+	width:20px;
+	height:20px;
+	position:absolute;
+	left:15px;
+	top:15px;
+	z-index:10;
+}
+.show .first{
+	border-radius:5px 5px 0 0;
+	overflow:hidden;
+	border-top:1px solid #ddd;
+	margin-top:46px;
+}
+.show .last{
+	border:none;
+}
+.btn-a{
+	display: block;
+	color: #FFF;
+	font-size:16px;
+	line-height:51px;
+	text-align:center;
+	background-color:#fc7878;
+	border:0;
+	border-radius:4px;
+	letter-spacing:4px;
+}
+.show .btn-a{
+	cursor:pointer;
+	width:100%;
+	margin-top:20px;
+}
+
+.show .bside{
+	margin-top:12px;
+	overflow:hidden;
+	height:auto;
+}
+.show .bside input{
+	float:left;
+	width:15px;
+	height:15px;
+	margin:2px 8px 0 0;
+}
+.show .bside label{
+	color:#666;
+	float:left;
+	font-size:12px;
+}
+.show .bside a{
+	float:right;
+	display:inline-block;
+	text-align:right;
+	color:#41A5E1;
+	font-size:12px;
+}
+.show .bside a:hover{
+	text-decoration:underline;
+}
+.show .bside .link-forget{
+	float:left;
+	margin-left:25px;
+}
