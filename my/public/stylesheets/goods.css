@@ -1,0 +1,84 @@
+html,body,ul,li,ol,dl,dd,dt,p,h1,h2,h3,h4,h5,h6,form,fieldset,legend,img,input{margin:0;padding:0}
+body{font-family: "微软雅黑";}
+ul,ol,li{list-style:none;}
+b,strong{font-weight:100;}
+em,i{font-style:normal;}
+h1,h2,h3,h4,h5,h6{font-weight:100;font-size:16px;}
+a,u{text-decoration: none;}
+input{outline:none;}
+img{display:block;border:0;}
+ body,html{
+ 	height:100%;
+ }
+/*主体部分*/
+#main{
+	width:100%;
+	height:100%;
+	position:relative;
+}
+
+.main-left{
+	width:180px;
+	height:100%;
+	position:absolute;
+	top:0;
+	left:0;
+	overflow:auto;
+}
+.main-left p{
+	padding:1px 0 0 10px;
+	height:33px;
+	background:#303030;
+}
+.main-left p span{
+	line-height:33px;
+	font-weight:bold;
+	padding:4px 15px 4px 18px;
+	cursor:pointer;
+	font-size:14px;
+	color:#fff;
+	font-family:"微软雅黑";
+}
+.main-left .collapse{
+	cursor:pointer;
+	background:#575757;
+	text-indent:40px;
+	display:block;
+	border-top:#7f7f7f 1px solid;
+	width:100%;
+	color:#fff;
+	line-height:42px;
+	text-align:left;
+	font-size:12px;
+}
+.main-left .collapse:hover{
+	background-color:#454545;
+}
+
+.main-center{
+	width:10px;
+	height:100%;
+	position:absolute;
+	top:0;
+	left:180px;
+	background:#303030;
+}
+.main-center img{
+	display:inline-block;
+	vertical-align: middle;
+	margin:auto;
+}
+.main-center span{
+	width:0;
+	height:100%;
+	display:inline-block;
+	vertical-align:middle;
+}
+
+.main-right{
+	float:left;
+	width:100%;
+	height:100%;
+	background:pink;
+	margin-left:190px;
+}
