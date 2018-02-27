@@ -10,6 +10,106 @@ img{display:block;border:0;}
  body,html{
  	height:100%;
  }
+ body{
+ 	color:#192E32;
+ }
+ /*头部*/
+a{
+	cursor:pointer;
+}
+#head{
+	width:100%;
+	height:75px;
+	background:#303030;
+	position:relative;
+	overflow:hidden;
+}
+#head .logo{
+	float:left;
+	margin:20px 0 0 30px;
+}
+#head ul{
+	height:75px;
+	position:absolute;
+	top:0;
+	right:0;
+}
+#head ul li{
+	float:left;
+	width:82px;
+	height:82px;
+}
+#head ul a{
+	display:block;
+	height:67px;
+	text-align:center;
+	padding-top:8px;
+}
+#head ul a:hover{
+	background:#404040;
+}
+#head ul img{
+	height:35px;
+	margin:0 auto;
+}
+#head ul span{
+	display:block;
+	font-size:12px;
+	color:#fff;
+	margin-top:6px;
+}
+/*导航*/
+#nav{
+	width:100%;
+	height:41px;
+	background:#575757;
+	border-bottom:1px solid #212121;
+}
+#nav ul{
+	overflow:hidden;
+}
+#nav ul li{
+	padding:12px 0 0 0;
+	float:left;
+	height:29px;
+}
+#nav ul li:first-child{
+	padding-left:19px;
+}
+#nav ul li:hover{
+	background:#454545;
+}
+#nav ul li:nth-child(6)~li a{
+	border:none;
+}
+#nav ul li a{
+	display:block;
+	font-size:12px;
+	height:18px;
+	color:#fff;
+	border-right:1px solid #ccc;
+	padding:0px 12px;
+}
+#nav ul img{
+	display:block;
+	float:left;
+	width:17px;
+	height:18px;
+	border:none;
+}
+#nav ul a span{
+	float:left;
+	margin-left:10px;
+}
+#nav .num{
+	width:32px;
+	height:16px;
+	background:#ff3f3f;
+	border-radius:16px;
+	line-height:16px;
+	text-align:center;
+	margin-left:10px;
+}
 /*主体部分*/
 #main{
 	width:100%;
@@ -51,6 +151,15 @@ img{display:block;border:0;}
 	text-align:left;
 	font-size:12px;
 }
+.main-left .menv{
+	display:none;
+}
+.main-left .menv li{
+	background:#575757;
+}
+.main-left .menv li:hover{
+	background:#454545;
+}
 .main-left .collapse:hover{
 	background-color:#454545;
 }
@@ -76,9 +185,168 @@ img{display:block;border:0;}
 }
 
 .main-right{
-	float:left;
-	width:100%;
+	width:83.5%;
 	height:100%;
-	background:pink;
 	margin-left:190px;
+	padding:10px;
+	overflow:auto;
+	background:#ececec;
+}
+.main-right h1{
+	border-bottom:1px solid #ccc;
+	font-size:24px;
+	color:#333;
+	font-weight:normal;
+	padding:7px 10px;
+	margin:0 0 10px 0;
+	overflow: hidden;
+}
+.main-right .action-span a{
+	color:#333;
+	font-size:18px;
+}
+.main-right .action-span2{
+	color:#4c4c4c;
+	font-size:18px;
+} 
+.main-right .action-span3{
+	display:inline-block;
+	vertical-align:middle;
+	margin-left:10px;
+}
+.main-right .action-span4 a{
+	float:right;
+	height:26px;
+	line-height:26px;
+	padding:0 10px 0 23px;
+	background:#c43926 url(/images/gs2.gif) no-repeat 6px center;
+	border-radius:3px;
+	color:#fff;
+	font-size:13px;
+	text-align:center;
+	cursor:pointer;
+}
+/*商品列表*/
+.main-right .goods-show{
+	width:100%;
+	padding:0;
+}
+.goods-show table{
+	display:table;
+	width:100%;
+	background:#ddd;
+}
+.goods-show td{
+	line-height:39px;
+	background:#f3f3f3;
+	font-size:12px;
+	text-align:center;
+}
+.goods-show td a{
+	color:#111;
+}
+.goods1{
+	display:none;
+}
+
+.tabbar-div{
+	padding-left:10px;
+	height:39px;
+	overflow: hidden;
+}
+
+.goods2-con{
+	border:1px solid #d7d7d7;
+	margin:0 0 10px 0;
+	padding:1px;
+}
+.goods2-con p{
+	margin-top:2px;
+}
+.goods2-con p span{
+	height:39px;
+	line-height:39px;
+	display:block;
+	float:left;
+	padding:0 20px;
+	text-align:center;
+	cursor:pointer;
+}
+.goods2-con span:first-child{
+	background:#fff;
+}
+
+
+.goods2 input{
+	margin:5px 0;
+}
+.goods2 td{
+	font-size:12px;
+}
+.tabbody{
+	padding:10px;
+	background:#fff;
+}
+.tabbody .label{
+	text-align:right;
+	vertical-align:top;
+	font-weight:bold;
+	padding:5px 12px;
+	width:30%;
+	line-height:30px;
+}
+.tabbody img{
+	display:inline-block;
+	vertical-align:middle;
+}
+.tabbody select{
+	margin:5px 0 5px 6px;
+}
+.tabbody span{
+	margin-left:12px;
+	font:12px verdana;
+	color:#FF0000;
+}
+.tabbody .notice-span{
+	color:#666;
+}
+.tabbody .s1{
+	width:163px;
+	margin:5px 0;
+}
+.tabbody .special{
+	margin:0 5px;
+	padding:1px 5px;
+	border:1px solid #91C4D0;
+	border-right:2px solid #278296;
+	border-bottom:2px solid #278296;
+	background:#DDEEF2;
+	text-decoration:none;
+	font-weight:400px; 
+}
+
+.tabbody .button{
+	padding:5px 15px 5px;
+	margin:2px;
+	border:none;
+	background:#ff3f3f;
+	color:#fff;
+	cursor:pointer;
+	border-radius:3px;
+}
+.tabbody .input1{
+	width:63px;
+}
+.tabbody .button-div{
+	text-align:center;
+	padding:3px 0;
+}
+
+.goods2 .foot{
+	background: #f3f3f3;
+	border:1px solid #ddd;
+	padding:15px;
+	color:#9CACAF;
+	margin:10px 0;
+	text-align:center;
 }
