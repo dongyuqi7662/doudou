@@ -151,17 +151,22 @@ a{
 	text-align:left;
 	font-size:12px;
 }
+
 .main-left .menv{
 	display:none;
 }
 .main-left .menv li{
+	font-size:12px;
+	height: 30px;
+	line-height: 30px;
 	background:#575757;
+	text-indent:40px;
+}
+.main-left .menv li a{
+	color:#d7d7d7;
 }
 .main-left .menv li:hover{
 	background:#454545;
-}
-.main-left .collapse:hover{
-	background-color:#454545;
 }
 
 .main-center{
@@ -341,6 +346,15 @@ a{
 	text-align:center;
 	padding:3px 0;
 }
+/*详细描述*/
+.twoshow{
+	height:270px;
+	border:1px solid #CCCCCC;
+	background-color:#fff;
+	overflow:hidden;
+	display: none;
+}
+
 
 .goods2 .foot{
 	background: #f3f3f3;

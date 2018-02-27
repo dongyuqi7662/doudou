@@ -155,16 +155,27 @@
 				<span>导航菜单</span>
 			</p>
 			<ul>
-				<li class="collapse">商品管理
-					<ul class="menv">
-						<li>商品列表</li>
-						<li>添加新商品</li>
-						<li>商品分类</li>
-						<li>用户评论</li>
-						<li>商品品牌</li>
-						<li>商品类型</li>
-					</ul>
-				</li>
+				<li class="collapse">商品管理</li>
+				<ul class="menv">
+					<li>
+						<a href="#">商品列表</a>
+					</li>
+					<li>
+						<a href="#">添加新商品</a>
+					</li>
+					<li>
+						<a href="#">商品分类</a>
+					</li>
+					<li>
+						<a href="#">用户评论</a>
+					</li>
+					<li>
+						<a href="#">商品品牌</a>
+					</li>
+					<li>
+						<a href="#">商品类型</a>
+					</li>
+				</ul>
 				<li class="collapse">促销管理</li>
 				<li class="collapse">订单管理</li>
 				<li class="collapse">广告管理</li>
@@ -275,8 +286,10 @@
 						<span>关联文章</span>
 					</p>
 				</div>
+				
 				<div class="tabbody">
-					<table width="90%" align="center" class="goods-info">
+					<!-- 通用信息 -->
+					<table width="90%" align="center" class="goods-info  conshow">
 						<!-- 第一行 -->
 						<tr>
 							<td class="label">商品名称：</td>
@@ -497,11 +510,24 @@
 							</td>
 						</tr>
 					</table>
+					<!-- 详细描述 -->
+					<div class="conshow twoshow">详细描述</div>
+					<!-- 其他信息 -->
+					<div class="conshow twoshow">其他信息</div>
+					<!-- 商品属性 -->
+					<div class="conshow twoshow">商品属性</div>
+					<!-- 商品相册 -->
+					<div class="conshow twoshow">商品相册</div>
+					<!-- 关联商品 -->
+					<div class="conshow twoshow">关联商品</div>
+					<!-- 配件 -->
+					<div class="conshow twoshow">配件</div>
 					<div class="button-div">
 						<input type="button" value=" 确定 " class="button">
 						<input type="reset" value=" 重置 " class="button">
 					</div>
 				</div>
+				
 			</div>
 			<div class="foot">
 				共执行 9 个查询，用时 0.024280 秒，Gzip 已禁用，内存占用 3.589 MB<br>
@@ -519,27 +545,42 @@
 		$(".collapse").eq(i).css("background",ocss)
 
 	}
-	// $(".collapse").click(function(){
-	// 		var index=$(this).index();
-	// 		var i=index+1;
-	// 		var ocss="#575757 url(/images/menu_"+i+".png) no-repeat";
-	// 		var bcss="#575757 url(/images/menu1_"+i+".png) no-repeat";
-	// 		console.log($(this).css("background-color"))
-	// 	})
 	// 二级菜单
 	$(".collapse").click(function(){
 		var index=$(this).index();
 		var omenv=$(".menv").eq(index).css("display");
 		if(omenv=="none"){
 			$(".menv").eq(index).css("display","block");
+			var i=index+1;
+			var bcss="#575757 url(/images/menu1_"+i+".png) no-repeat";
+			$(this).css("background",bcss)
 		}else{
 			$(".menv").eq(index).css("display","none");
+			var i=index+1;
+			var ocss="#575757 url(/images/menu_"+i+".png) no-repeat";
+			$(this).css("background",ocss)
 		}
 		
+	})
+	$(".collapse").mouseover(function(){
+		$(this).css("background-color","#303030")
+	}).mouseout(function(){
+		$(this).css("background-color","#575757")
+	})
+	// 左侧二级菜单切换页面
+	$(".menv li").click(function(){
+		var index=$(this).index();
+		$(".main-right").eq(index).css("display","block")
+							.siblings(".main-right").css("display","none")
 	})
 	// 添加商品页面
 	$(".tabbar-div span").click(function(){
 		$(this).css("background","#fff")
 				.siblings().css("background","#ececec")
+		// 添加商品页面模块切换
+		var index=$(this).index();
+		$(".conshow").eq(index).css("display","block")
+							.siblings(".conshow").css("display","none")
 	})
+	
 </script>
