@@ -21,7 +21,7 @@ form{
 .login-body{
 	width:100%;
 	height:100%;
-	background:#555 url(../img/tu1.png) no-repeat center center;
+	background:#555 url(/images/tu1.png) no-repeat center center;
 	background-size:cover;
 	position:relative;
 }
@@ -55,7 +55,7 @@ form{
 	overflow:hidden;
 	padding-bottom:42px;
 	height:350px;
-	background:url(../img/tu2.png) no-repeat 0 bottom;
+	background:url(/images/tu2.png) no-repeat 0 bottom;
 	margin-top:50px;
 }
 .main-con .show{

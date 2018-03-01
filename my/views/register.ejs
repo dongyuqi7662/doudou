@@ -3,10 +3,11 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<script src="/javascripts/jquery-1.11.1.min.js"></script>
 	<link rel="stylesheet" href="/stylesheets/register.css">
 </head>
 <body style="height:100%;padding:0">
-<form class="login-body" method="post" action="privilege.php" name="theForm" onsubmit="return validate()">
+<div class="login-body">
 	<!-- 头部 -->
 	<div class="head">
 		<img src="/images/logo.png" alt="">
@@ -20,18 +21,18 @@
 			<div class="show">
 				<div class="controls first">
 					<img src="/images/tu3.png" alt="" class="iconfont">
-					<input type="text" placeholder="用户名" name="username">
+					<input type="text" placeholder="用户名" name="username" id="username">
 				</div>
 				<div class="controls two">
 					<img src="/images/tu4.png" alt="" class="iconfont">
-					<input type="text" placeholder="密码" name="password">
+					<input type="password" placeholder="密码" name="psw" id="psw">
 				</div>
 				<div class="controls three"> 
 					<img src="/images/tu5.png" alt="" class="iconfont">
-					<input type="text" placeholder="验证码" name="captchas">
+					<input type="text" placeholder="验证码" id="captchas">
 				</div>
 				<div class="controls last">
-					<input type="submit" class="btn-a" value="登录">
+					<button onclick="register()" class="btn-a" >登录</button>
 				</div>
 				<div class="controls bside" style="border:none">
 					<input type="checkbox" name="remember" id="remember">
@@ -42,7 +43,26 @@
 			</div>
 		</div>
 	</div>
-</form>
-	
+</div>
+<script>
+	function register(){
+		$.ajax({
+			url:"/api/register",
+			type:"post",
+			data:{
+				username:$("#username").val(),
+				psw:$("#psw").val()
+			},
+			success:function(res){
+				console.log(res);
+					if(res.status == 1) {
+							location.href = "/goods";
+						} else {
+							alert(res.message);
+						}
+			}
+		})
+	}
+</script>
 </body>
 </html>

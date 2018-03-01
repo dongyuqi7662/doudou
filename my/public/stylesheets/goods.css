@@ -9,6 +9,7 @@ input{outline:none;}
 img{display:block;border:0;}
  body,html{
  	height:100%;
+ 	overflow:hidden;
  }
  body{
  	color:#192E32;
@@ -190,10 +191,9 @@ a{
 }
 
 .oi{
-	width:83.5%;
+	display:block;
 	height:100%;
-	margin-left:190px;
-	padding:10px;
-	overflow:auto;
+	overflow:hidden;
 	background:#ececec;
+	border:none;
 }
