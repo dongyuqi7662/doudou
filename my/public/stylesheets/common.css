@@ -16,6 +16,7 @@ img{display:block;border:0;}
  .main-right{
 	width:84%;
 	height:100%;
+	padding:10px;
 	margin-left:190px;
 	overflow:auto;
 	background:#ececec;
@@ -63,6 +64,14 @@ img{display:block;border:0;}
 	display:table;
 	width:100%;
 	background:#ddd;
+	vertical-align:middle;
+
+}
+.goods-show table td{
+	background:#fff;
+}
+.goods-show .t1 td{
+	background:#f3f3f3;
 }
 .goods-show td{
 	line-height:39px;
@@ -70,10 +79,33 @@ img{display:block;border:0;}
 	font-size:12px;
 	text-align:center;
 }
+.goods-show input{
+	vertical-align:middle;
+}
+.goods-show img{
+	display:inline-block;
+}
 .goods-show td a{
 	color:#111;
 }
+/*底部*/
+.goods-show .turn-page{
+	width:100%;
+	text-align:right;
+	font-size:12px;
+	vertical-align:middle;
+}
+.goods-show .page-link{
+	margin-left:1em;
+	padding-left:1em;
+	border-left:1px solid #999;
+}
+.goods-show .page-link a{
+	color:#192E32;
+}
 
+
+/*添加新商品*/
 .tabbar-div{
 	padding-left:10px;
 	height:39px;

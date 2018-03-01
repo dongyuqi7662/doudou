@@ -24,8 +24,9 @@
 			</h1>
 			<div class="goods-show">
 				<table cellpadding="3" cellspacing="1">
-					<tr>
+					<tr class="t1">
 						<td>
+							<input type="checkbox">
 							<a href="#">编号</a>
 						</td>
 						<td>
@@ -62,8 +63,95 @@
 							<a href="#">操作</a>
 						</td>
 					</tr>
+					<tr>
+						<td>
+							<input type="checkbox">
+							<a href="#">279</a>
+						</td>
+						<td>
+							<a href="#">钻石</a>
+						</td>
+						<td>
+							<a href="#">233</a>
+						</td>
+						<td>
+							<a href="#">66</a>
+						</td>
+						<td class="right">
+							<img src="/images/q1.gif" alt="">
+						</td>
+						<td class="right">
+							<img src="/images/q1.gif" alt="">
+						</td>
+						<td class="right">
+							<img src="/images/q1.gif" alt="">
+						</td>
+						<td class="right">
+							<img src="/images/q1.gif" alt="">
+						</td>
+						<td>
+							<a href="#">100</a>
+						</td>
+						<td>
+							<a href="#">100</a>
+						</td>
+						<td>
+							<a href="#">100</a>
+						</td>
+						<td>
+							<a href="#">
+								<img src="/images/q3.gif" alt="">
+							</a>
+							<a href="#">
+								<img src="/images/q4.gif" alt="">
+							</a>
+							<a href="#">
+								<img src="/images/q5.gif" alt="">
+							</a>
+							<a href="#">
+								<img src="/images/q6.gif" alt="">
+							</a>
+						</td>
+					</tr>
 				</table>
+				<div class="turn-page">
+					总计
+					<span>6</span>
+					个记录分为
+					<span>1</span>
+					页当前第
+					<span>1</span>
+					页，每页
+					<input type="text" size="3" id="pageSize" value="15">
+					<span class="page-link">
+						<a href="#">第一页</a>
+						<a href="#">上一页</a>
+						<a href="#">下一页</a>
+						<a href="#">最末页</a>
+						<select name="" class="gotoPage">
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+						</select>
+					</span>
+				</div>
 			</div>
 		</div>
 </body>
 </html>
+<script>
+window.onload=function(){
+	// 对错图片切换
+	$(".right img").attr("lev","1")
+	$(".right").click(function(){
+		if($(this).find("img").attr("lev")=="1"){
+			$(this).find("img").attr("src","/images/q2.gif")
+			$(this).find("img").attr("lev","2")
+		}else{
+			$(this).find("img").attr("src","/images/q1.gif")
+			$(this).find("img").attr("lev","1")
+		}
+	})
+}
+	
+</script>
