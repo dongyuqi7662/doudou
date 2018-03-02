@@ -196,7 +196,8 @@ a{
 .oi{
 	display:block;
 	height:100%;
-	overflow:hidden;
+	overflow:auto;
 	background:#ececec;
 	border:none;
+	margin-left:180px;
 }

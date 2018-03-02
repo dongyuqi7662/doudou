@@ -14,10 +14,9 @@ img{display:block;border:0;}
  	color:#192E32;
  }
  .main-right{
-	width:84%;
-	height:100%;
-	padding:10px;
-	margin-left:190px;
+ 	width:83%;
+	height:74%;
+	padding:20px;
 	overflow:auto;
 	background:#ececec;
 }
@@ -208,7 +207,7 @@ img{display:block;border:0;}
 }
 
 
-.goods2 .foot{
+.foot{
 	background: #f3f3f3;
 	border:1px solid #ddd;
 	padding:15px;

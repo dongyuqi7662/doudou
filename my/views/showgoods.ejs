@@ -63,56 +63,58 @@
 							<a href="#">操作</a>
 						</td>
 					</tr>
-					<tr>
-						<td>
-							<input type="checkbox">
-							<a href="#">279</a>
-						</td>
-						<td>
-							<a href="#">钻石</a>
-						</td>
-						<td>
-							<a href="#">233</a>
-						</td>
-						<td>
-							<a href="#">66</a>
-						</td>
-						<td class="right">
-							<img src="/images/q1.gif" alt="">
-						</td>
-						<td class="right">
-							<img src="/images/q1.gif" alt="">
-						</td>
-						<td class="right">
-							<img src="/images/q1.gif" alt="">
-						</td>
-						<td class="right">
-							<img src="/images/q1.gif" alt="">
-						</td>
-						<td>
-							<a href="#">100</a>
-						</td>
-						<td>
-							<a href="#">100</a>
-						</td>
-						<td>
-							<a href="#">100</a>
-						</td>
-						<td>
-							<a href="#">
-								<img src="/images/q3.gif" alt="">
-							</a>
-							<a href="#">
-								<img src="/images/q4.gif" alt="">
-							</a>
-							<a href="#">
-								<img src="/images/q5.gif" alt="">
-							</a>
-							<a href="#">
-								<img src="/images/q6.gif" alt="">
-							</a>
-						</td>
-					</tr>
+					<% for(var i=0;i<list.length;i++){ %>
+						<tr>
+							<td>
+								<input type="checkbox">
+								<a href="#">279</a>
+							</td>
+							<td>
+								<%= list[i].goods_name %>
+							</td>
+							<td>
+								<%= list[i].goods_num %>
+							</td>
+							<td>
+								<%= list[i].price %>
+							</td>
+							<td class="right">
+								<img src="/images/q1.gif" alt="">
+							</td>
+							<td class="right">
+								<img src="/images/q1.gif" alt="">
+							</td>
+							<td class="right">
+								<img src="/images/q1.gif" alt="">
+							</td>
+							<td class="right">
+								<img src="/images/q1.gif" alt="">
+							</td>
+							<td>
+								<a href="#">100</a>
+							</td>
+							<td>
+								<a href="#">100</a>
+							</td>
+							<td>
+								<%= list[i].dream_num %>
+							</td>
+							<td>
+								<a href="#">
+									<img src="/images/q3.gif" alt="">
+								</a>
+								<a href="#">
+									<img src="/images/q4.gif" alt="">
+								</a>
+								<a href="#">
+									<img src="/images/q5.gif" alt="">
+								</a>
+								<a href="#">
+									<img src="/images/q6.gif" alt="">
+								</a>
+							</td>
+						</tr>
+					<% } %>
 				</table>
 				<div class="turn-page">
 					总计
@@ -135,6 +137,11 @@
 						</select>
 					</span>
 				</div>
+			</div>
+			<!-- 底部 -->
+			<div class="foot">
+				共执行 9 个查询，用时 0.024280 秒，Gzip 已禁用，内存占用 3.589 MB<br>
+				版权所有 © 2005-2018 上海商派软件有限公司，并保留所有权利。
 			</div>
 		</div>
 </body>

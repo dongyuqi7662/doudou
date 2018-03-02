@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var usermodel=require("../mondel/usermodel");
+var goodsmodel = require("../mondel/goodsmodel");
+var multiparty = require('multiparty');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -38,11 +40,43 @@ router.get('/goods', function(req, res, next) {
 });
 
 router.get('/showgoods', function(req, res, next) {
-  res.render('showgoods', { title: '商品列表' });
+  goodsmodel.find({}, function(err, docs) {
+		res.render("showgoods", {list: docs});
+	})
 });
 
 router.get('/addgoods', function(req, res, next) {
   res.render('addgoods', { title: '添加新商品' });
 });
+
+
+router.post("/addgoods", function(req, res){
+
+	var Form = new multiparty.Form({
+		uploadDir: "./public/images"
+	})
+	Form.parse(req, function(err, body, files){
+		var goods_name = body.goods_name[0];
+		var goods_num = body.goods_num[0];
+		var price = body.price[0];
+		var dream_num = body.dream_num[0];
+		var imgName = files.img[0].path;
+		imgName = imgName.substr(imgName.lastIndexOf("\\") + 1);
+
+		var gm = new goodsmodel();
+		gm.goods_name = goods_name;
+		gm.goods_num = goods_num;
+		gm.price = price;
+		gm.dream_num = dream_num;
+		gm.img = imgName;
+		gm.save(function(err){
+			if(!err) {
+				res.send("商品保存成功");
+			} else {
+				res.send("商品保存失败");
+			}
+		})
+	})
+})
 
 module.exports = router;
