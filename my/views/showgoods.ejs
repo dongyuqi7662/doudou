@@ -101,16 +101,16 @@
 							</td>
 							<td>
 								<a href="#">
-									<img src="/images/q3.gif" alt="">
+									<img src="/images/q3.gif" alt="" title="查看">
 								</a>
 								<a href="#">
-									<img src="/images/q4.gif" alt="">
+									<img src="/images/q4.gif" alt="" title="编辑">
 								</a>
 								<a href="#">
-									<img src="/images/q5.gif" alt="">
+									<img src="/images/q5.gif" alt="" title="复制">
 								</a>
 								<a href="#">
-									<img src="/images/q6.gif" alt="">
+									<img src="/images/q6.gif" alt="" title="回收站">
 								</a>
 							</td>
 						</tr>
@@ -118,17 +118,19 @@
 				</table>
 				<div class="turn-page">
 					总计
-					<span>6</span>
+					<span><%= lists%></span>
 					个记录分为
 					<span>1</span>
 					页当前第
-					<span>1</span>
+					<span><%= page%></span>
 					页，每页
-					<input type="text" size="3" id="pageSize" value="15">
+					<input type="text" size="3" id="pageSize" value="<%= count%>">
 					<span class="page-link">
-						<a href="#">第一页</a>
-						<a href="#">上一页</a>
-						<a href="#">下一页</a>
+						<a href="/showgoods?page=1&count=<%= count%>">第一页</a>
+						<% if(page>1){%>
+						<a href="/showgoods?page=<%= page-1%>&count=<%= count%>">上一页</a>
+						<%}%>
+						<a href="/showgoods?page=<%= page+1%>&count=<%= count%>">下一页</a>
 						<a href="#">最末页</a>
 						<select name="" class="gotoPage">
 							<option value="1">1</option>
@@ -160,5 +162,7 @@ window.onload=function(){
 		}
 	})
 }
+	
+	
 	
 </script>

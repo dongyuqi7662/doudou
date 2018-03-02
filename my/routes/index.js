@@ -40,9 +40,17 @@ router.get('/goods', function(req, res, next) {
 });
 
 router.get('/showgoods', function(req, res, next) {
-  goodsmodel.find({}, function(err, docs) {
-		res.render("showgoods", {list: docs});
+	var page=parseInt(req.query.page||1);
+	var count=parseInt(req.query.count||3);
+
+	var query=goodsmodel.find({}).skip((page-1)*count).limit(count).sort({date:-1});
+	query.exec(function(err,results){
+		console.log(err);
+		res.render("showgoods", {list: results,page:page,count:count,lists:results.length});
 	})
+ //  goodsmodel.find({}, function(err, docs) {
+	// 	res.render("showgoods", {list: docs});
+	// })
 });
 
 router.get('/addgoods', function(req, res, next) {
