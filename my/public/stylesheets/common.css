@@ -29,6 +29,30 @@ img{display:block;border:0;}
 	margin:0 0 10px 0;
 	overflow: hidden;
 }
+
+/*搜索栏*/
+.search{
+	background: #f3f3f3;
+	border:1px solid #ddd;
+	padding:5px;
+	color:#808080;
+	margin:0 0 10px 0;
+	font-size:12px;
+}
+.search img{
+	display:inline-block;
+	vertical-align:middle;
+}
+#buttons{
+	padding:5px 15px 5px;
+	margin:2px;
+	border:none;
+	background: #ff3f3f;
+	color:#fff;
+	cursor:pointer;
+	border-radius:3px;
+}
+
 .main-right .action-span a{
 	color:#333;
 	font-size:18px;

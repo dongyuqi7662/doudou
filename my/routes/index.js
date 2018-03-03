@@ -39,6 +39,7 @@ router.get('/goods', function(req, res, next) {
   res.render('goods', { title: '商品页面' });
 });
 
+// 删除
 router.get('/api/goods_del', function(req, res, next) {
  	goodsmodel.findByIdAndRemove({_id:req.query.gid},function(err){
  		var result={
@@ -53,14 +54,25 @@ router.get('/api/goods_del', function(req, res, next) {
 
  	})
 });
+// 搜索
+router.post('/api/search', function(req, res, next) {
+ 	goodsmodel.find({"goods_name":{$regex:req.body.find_con}},function(err,docs){
+		res.send(docs);
+ 	})
+});
+// 分页
 router.get('/showgoods', function(req, res, next) {
 	var page=parseInt(req.query.page||1);
 	var count=parseInt(req.query.count||3);
 
+	var lists="";
+	goodsmodel.find({}, function(err, docs) {
+		lists=docs.length;
+	})
 	var query=goodsmodel.find({}).skip((page-1)*count).limit(count).sort({date:-1});
 	query.exec(function(err,results){
 		console.log(err);
-		res.render("showgoods", {list: results,page:page,count:count,lists:results.length});
+		res.render("showgoods", {list: results,page:page,count:count,lists:lists});
 	})
  //  goodsmodel.find({}, function(err, docs) {
 	// 	res.render("showgoods", {list: docs});
@@ -71,7 +83,7 @@ router.get('/addgoods', function(req, res, next) {
   res.render('addgoods', { title: '添加新商品' });
 });
 
-
+// 商品添加
 router.post("/addgoods", function(req, res){
 
 	var Form = new multiparty.Form({

@@ -22,8 +22,42 @@
 					<a href="#">添加商品</a>
 				</span>
 			</h1>
+			<!-- 搜索 -->
+			<div class="search">
+				<img src="/images/search.gif" alt="" width="26" height="22" border="0">
+				<!-- 分类 -->
+				<select name="" id="">
+					<option value="0">所有分类</option>
+					<option value="1">钻石</option>
+				</select>
+				<!-- 品牌 -->
+				<select name="" id="">
+					<option value="0">所有品牌</option>
+					<option value="1">美好家</option>
+				</select>
+				<!-- 推荐 -->
+				<select name="" id="">
+					<option value="0">全部</option>
+					<option value="1">精品</option>
+				</select>
+				<!-- 上架 -->
+				<select name="" id="">
+					<option value="0">全部</option>
+					<option value="1">精品</option>
+				</select>
+				<!-- 关键字 -->
+				<select name="" id="">
+					<option value="0">全部</option>
+					<option value="1">上架</option>
+					<option value="2">下架</option>
+				</select>
+				关键字
+				<input type="text" size="15" id="find-con">
+				<button onclick="search()" id="buttons" >搜索</button>
+			</div>
+			<!-- 商品列表 -->
 			<div class="goods-show">
-				<table cellpadding="3" cellspacing="1">
+				<table cellpadding="3" cellspacing="1" class="otb">
 					<tr class="t1">
 						<td>
 							<input type="checkbox">
@@ -183,5 +217,114 @@ function del(gid){
 		}
 	})
 		
+}
+
+function search(){
+	$.ajax({
+		url:"/api/search",
+		type:"post",
+		data:{
+			find_con:$("#find-con").val()
+		},
+		success:function(res){
+			console.log(res);
+			var html="";
+			html=`<tr class="t1">
+						<td>
+							<input type="checkbox">
+							<a href="#">编号</a>
+						</td>
+						<td>
+							<a href="#">商品名称</a>
+						</td>
+						<td>
+							<a href="#">货号</a>
+						</td>
+						<td>
+							<a href="#">价格</a>
+						</td>
+						<td>
+							<a href="#">上架</a>
+						</td>
+						<td>
+							<a href="#">精品</a>
+						</td>
+						<td>
+							<a href="#">新品</a>
+						</td>
+						<td>
+							<a href="#">热销</a>
+						</td>
+						<td>
+							<a href="#">推荐排序</a>
+						</td>
+						<td>
+							<a href="#">库存</a>
+						</td>
+						<td>
+							<a href="#">虚拟销量</a>
+						</td>
+						<td>
+							<a href="#">操作</a>
+						</td>
+					</tr>`
+			for(var i=0;i<res.length;i++){
+				html +=
+				`<tr>
+					<td>
+						<input type="checkbox">
+						<a href="#">279</a>
+					</td>
+					<td>
+						${res[i].goods_name}
+					</td>
+					<td>
+						${res[i].goods_num}
+					</td>
+					<td>
+						${res[i].price}
+					</td>
+					<td class="right">
+						<img src="/images/q1.gif" alt="">
+					</td>
+					<td class="right">
+						<img src="/images/q1.gif" alt="">
+					</td>
+					<td class="right">
+						<img src="/images/q1.gif" alt="">
+					</td>
+					<td class="right">
+						<img src="/images/q1.gif" alt="">
+					</td>
+					<td>
+						<a href="#">100</a>
+					</td>
+					<td>
+						<a href="#">100</a>
+					</td>
+					<td>
+						${res[i].dream_num}
+					</td>
+					<td>
+						<a href="javascript:;">
+							<img src="/images/q3.gif" alt="" title="查看">
+						</a>
+						<a href="javascript:;">
+							<img src="/images/q4.gif" alt="" title="编辑">
+						</a>
+						<a href="javascript:;">
+							<img src="/images/q5.gif" alt="" title="复制">
+						</a>
+						<a href="javascript:;">
+
+							<img src="/images/q6.gif" alt="" title="回收站" onclick="del('${res[i]._id}')">
+						</a>
+					</td>
+				</tr>`
+			}
+			$(".otb").html(html)
+			
+		}
+	})
 }
 </script>
