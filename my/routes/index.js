@@ -39,6 +39,20 @@ router.get('/goods', function(req, res, next) {
   res.render('goods', { title: '商品页面' });
 });
 
+router.get('/api/goods_del', function(req, res, next) {
+ 	goodsmodel.findByIdAndRemove({_id:req.query.gid},function(err){
+ 		var result={
+			status:1,
+			message:"删除成功"
+		};
+		if(err){
+			result.status=-119;
+			result.message="删除失败";
+		}
+		res.send(result);
+
+ 	})
+});
 router.get('/showgoods', function(req, res, next) {
 	var page=parseInt(req.query.page||1);
 	var count=parseInt(req.query.count||3);

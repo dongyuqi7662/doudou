@@ -100,17 +100,18 @@
 								<%= list[i].dream_num %>
 							</td>
 							<td>
-								<a href="#">
+								<a href="javascript:;">
 									<img src="/images/q3.gif" alt="" title="查看">
 								</a>
-								<a href="#">
+								<a href="javascript:;">
 									<img src="/images/q4.gif" alt="" title="编辑">
 								</a>
-								<a href="#">
+								<a href="javascript:;">
 									<img src="/images/q5.gif" alt="" title="复制">
 								</a>
-								<a href="#">
-									<img src="/images/q6.gif" alt="" title="回收站">
+								<a href="javascript:;">
+
+									<img src="/images/q6.gif" alt="" title="回收站" onclick="del('<%=list[i]._id%>')">
 								</a>
 							</td>
 						</tr>
@@ -161,8 +162,26 @@ window.onload=function(){
 			$(this).find("img").attr("lev","1")
 		}
 	})
+	
+
 }
-	
-	
-	
+function del(gid){
+	$.ajax({
+		url:"/api/goods_del",
+		type:"get",
+		data:{
+			gid:gid
+		},
+		success:function(res){
+			console.log(res);
+			if(res.status==1){
+				alert("删除成功")
+				location.reload(true);
+			}else{
+				alert(res.message);
+			}
+		}
+	})
+		
+}
 </script>
