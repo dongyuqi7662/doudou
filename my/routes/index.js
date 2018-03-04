@@ -66,13 +66,19 @@ router.get('/showgoods', function(req, res, next) {
 	var count=parseInt(req.query.count||3);
 
 	var lists="";
+	var maxpage="";
 	goodsmodel.find({}, function(err, docs) {
 		lists=docs.length;
+		lists=parseInt(lists);
+		maxpage=lists/count;
+		maxpage=Math.ceil(maxpage);
+		// console.log(maxpage);
 	})
+
 	var query=goodsmodel.find({}).skip((page-1)*count).limit(count).sort({date:-1});
 	query.exec(function(err,results){
 		console.log(err);
-		res.render("showgoods", {list: results,page:page,count:count,lists:lists});
+		res.render("showgoods", {list: results,page:page,count:count,lists:lists,maxpage:maxpage});
 	})
  //  goodsmodel.find({}, function(err, docs) {
 	// 	res.render("showgoods", {list: docs});

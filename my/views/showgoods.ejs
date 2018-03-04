@@ -165,8 +165,10 @@
 						<% if(page>1){%>
 						<a href="/showgoods?page=<%= page-1%>&count=<%= count%>">上一页</a>
 						<%}%>
+						<% if(page<maxpage){%>
 						<a href="/showgoods?page=<%= page+1%>&count=<%= count%>">下一页</a>
-						<a href="#">最末页</a>
+						<%}%>
+						<a href="/showgoods?page=<%= maxpage%>&count=<%= count%>#">最末页</a>
 						<select name="" class="gotoPage">
 							<option value="1">1</option>
 							<option value="2">2</option>
